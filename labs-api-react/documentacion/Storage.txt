@@ -1,0 +1,19 @@
+---LOCAL STORAGE----
+
+Local Storage: Funcion de react que nos permite guardar datos en el navegador y obtenerlo en otro lado.
+Nos puede servir para guardar datos de una sesion, o datos que no queremos perder al recargar la pagina. Datos de usuario
+Tambien para el carrito de compras
+
+
+ const guardarNombreEnLocal = () => {
+    localStorage.setItem('nombre', 'Javier'); // Guarda el nombre en el local storage
+  }
+
+  const obtenerNombreDeLocal = () => {
+    const nombre = localStorage.getItem('nombre'); // Obtiene el nombre del local storage
+    console.log(nombre); // Muestra el nombre en la consola
+  }
+
+  ------------------
+
+  Usar json-server para el back del front.

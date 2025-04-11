@@ -1,0 +1,42 @@
+-----USE STATE-------
+
+Se utliza para poder modificar una variable.
+Si cambia me renderiza devuelta el componente.
+const [prendido, setPrendido] = useState(false);
+
+------------
+
+----USE EFFECT----
+// Logica para consultar y guardar datos desde una API
+//useEffect: Sirve para ejecutar efectos secundarios en componentes funcionales, se ejecuta después de que el componente se haya montado o actualizado.
+// useEffect(() => {console.log("hola")}, []);
+//Puedo condincioar el useEffect para que se ejecute solo una vez o cada vez que cambie un estado o una propiedad
+// useEffect(() => {console.log("hola")}, [contador]); Si el contador cambia se ejecuta el useEffect
+
+Utilizando el useEffect para el API
+
+useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users') // API de prueba para obtener usuarios
+    .then(resultado => resultado.json()) // Convierte la respuesta a JSON
+    .then(setUsuarios) // Actualiza el estado con los usuarios obtenidos
+    .catch(error => console.log(error)) // Maneja errores
+  }, []);
+
+------------
+
+----USE ROUTER----
+
+Sirve para levantar componentes
+router.push(/mostrar)
+Esto levanta el componente que esta ahi, el useEffect podria hacer un get de la info que guardamos antes para obtenerla.
+
+  // const router = useRouter();
+    localStorage.setItem('nombre', 'Javier'); // Guarda el nombre en el local storage
+    router.push('/about'); // Navega a la ruta '/about'
+  // 
+En about podemos hacer un get con el useEffect y renderizarlo.
+-----------
+
+
+
+
